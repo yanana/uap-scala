@@ -16,10 +16,10 @@ lazy val compilerOptions = Seq(
   "-Xlint"
 )
 
-val snakeyamlVersion = "1.17"
-val twitterUtilVersion = "6.40.0"
+val snakeyamlVersion = "1.18"
+val twitterUtilVersion = "6.43.0"
 val scalaCheckVersion = "1.13.4"
-val scalatestVersion = "3.0.1"
+val scalatestVersion = "3.0.3"
 val specs2Version = "2.4.17"
 
 lazy val coreDeps = Seq(
@@ -35,8 +35,8 @@ lazy val testDeps = Seq(
 
 lazy val buildSettings = Seq(
   organization := "com.github.yanana",
-  scalaVersion := "2.12.1",
-  crossScalaVersions := Seq("2.11.8", "2.12.1")
+  scalaVersion := "2.12.2",
+  crossScalaVersions := Seq("2.11.11", "2.12.2")
 )
 
 lazy val baseSettings = Seq(
