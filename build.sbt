@@ -18,9 +18,8 @@ lazy val compilerOptions = Seq(
 
 val snakeyamlVersion = "1.18"
 val twitterUtilVersion = "6.43.0"
-val scalaCheckVersion = "1.13.4"
+val scalaCheckVersion = "1.13.5"
 val scalatestVersion = "3.0.3"
-val specs2Version = "2.4.17"
 
 lazy val coreDeps = Seq(
   "org.yaml" % "snakeyaml" % snakeyamlVersion,
@@ -29,8 +28,7 @@ lazy val coreDeps = Seq(
 
 lazy val testDeps = Seq(
   "org.scalatest" %% "scalatest" % scalatestVersion,
-  "org.scalacheck" %% "scalacheck" % scalaCheckVersion,
-  "org.specs2" %% "specs2-core" % specs2Version
+  "org.scalacheck" %% "scalacheck" % scalaCheckVersion
 ) map (_ % "test")
 
 lazy val buildSettings = Seq(
