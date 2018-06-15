@@ -18,7 +18,7 @@ case class Parser(userAgentParser: UserAgentParser, osParser: OSParser, devicePa
 object Parser {
   def create(source: InputStream) = {
     val yaml = new Yaml(new SafeConstructor)
-    val javaConfig = yaml.load(source).asInstanceOf[JMap[String, JList[JMap[String, String]]]]
+    val javaConfig = yaml.load[JMap[String, JList[JMap[String, String]]]](source)
     val config = javaConfig.asScala.toMap.mapValues(_.asScala.toList.map(_.asScala.toMap.filterNot {
       case (_, value) => value == null
     }))
