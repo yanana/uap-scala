@@ -12,8 +12,8 @@ object OS {
   }
 
   private[parser] case class OSPattern(pattern: Pattern, osReplacement: Option[String], v1Replacement: Option[String],
-      v2Replacement: Option[String], v3Replacement: Option[String],
-      v4Replacement: Option[String]) {
+    v2Replacement: Option[String], v3Replacement: Option[String],
+    v4Replacement: Option[String]) {
     def process(agent: String): Option[OS] = {
       val matcher = pattern.matcher(agent)
       if (!matcher.find()) return None

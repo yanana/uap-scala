@@ -89,12 +89,12 @@ lazy val publishSettings = Seq(
 )
 
 lazy val noPublishSettings = Seq(
-  publish := (),
-  publishLocal := (),
+  publish := (()),
+  publishLocal := (()),
   publishArtifact := false
 )
 
-lazy val allSettings = buildSettings ++ baseSettings ++ publishSettings ++ scalariformSettings
+lazy val allSettings = buildSettings ++ baseSettings ++ publishSettings
 
 lazy val root = (project in file("."))
   .settings(

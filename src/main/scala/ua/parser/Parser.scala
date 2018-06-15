@@ -11,7 +11,7 @@ import scala.collection.JavaConverters._
 import java.util.{ Map => JMap, List => JList }
 
 case class Parser(userAgentParser: UserAgentParser, osParser: OSParser, deviceParser: DeviceParser)
-    extends UserAgentStringParser {
+  extends UserAgentStringParser {
   def parse(agent: String) = Client(userAgentParser.parse(agent), osParser.parse(agent), deviceParser.parse(agent))
 }
 
