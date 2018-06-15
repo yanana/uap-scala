@@ -33,8 +33,8 @@ lazy val testDeps = Seq(
 
 lazy val buildSettings = Seq(
   organization := "com.github.yanana",
-  scalaVersion := "2.12.2",
-  crossScalaVersions := Seq("2.11.11", "2.12.2")
+  scalaVersion := "2.12.6",
+  crossScalaVersions := Seq("2.11.12", "2.12.6")
 )
 
 lazy val baseSettings = Seq(
