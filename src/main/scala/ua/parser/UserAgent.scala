@@ -12,7 +12,7 @@ object UserAgent {
   }
 
   private[parser] case class UserAgentPattern(pattern: Pattern, familyReplacement: Option[String],
-      v1Replacement: Option[String], v2Replacement: Option[String]) {
+    v1Replacement: Option[String], v2Replacement: Option[String]) {
     def process(agent: String): Option[UserAgent] = {
       val matcher = pattern.matcher(agent)
       if (!matcher.find()) return None

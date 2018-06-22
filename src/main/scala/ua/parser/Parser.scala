@@ -11,14 +11,14 @@ import scala.collection.JavaConverters._
 import java.util.{ Map => JMap, List => JList }
 
 case class Parser(userAgentParser: UserAgentParser, osParser: OSParser, deviceParser: DeviceParser)
-    extends UserAgentStringParser {
+  extends UserAgentStringParser {
   def parse(agent: String) = Client(userAgentParser.parse(agent), osParser.parse(agent), deviceParser.parse(agent))
 }
 
 object Parser {
   def create(source: InputStream) = {
     val yaml = new Yaml(new SafeConstructor)
-    val javaConfig = yaml.load(source).asInstanceOf[JMap[String, JList[JMap[String, String]]]]
+    val javaConfig = yaml.load[JMap[String, JList[JMap[String, String]]]](source)
     val config = javaConfig.asScala.toMap.mapValues(_.asScala.toList.map(_.asScala.toMap.filterNot {
       case (_, value) => value == null
     }))

@@ -16,10 +16,10 @@ lazy val compilerOptions = Seq(
   "-Xlint"
 )
 
-val snakeyamlVersion = "1.18"
-val twitterUtilVersion = "6.43.0"
-val scalaCheckVersion = "1.13.5"
-val scalatestVersion = "3.0.3"
+val snakeyamlVersion = "1.21"
+val twitterUtilVersion = "18.5.0"
+val scalaCheckVersion = "1.14.0"
+val scalatestVersion = "3.0.5"
 
 lazy val coreDeps = Seq(
   "org.yaml" % "snakeyaml" % snakeyamlVersion,
@@ -33,8 +33,8 @@ lazy val testDeps = Seq(
 
 lazy val buildSettings = Seq(
   organization := "com.github.yanana",
-  scalaVersion := "2.12.2",
-  crossScalaVersions := Seq("2.11.11", "2.12.2")
+  scalaVersion := "2.12.6",
+  crossScalaVersions := Seq("2.11.12", "2.12.6")
 )
 
 lazy val baseSettings = Seq(
@@ -89,12 +89,12 @@ lazy val publishSettings = Seq(
 )
 
 lazy val noPublishSettings = Seq(
-  publish := (),
-  publishLocal := (),
+  publish := (()),
+  publishLocal := (()),
   publishArtifact := false
 )
 
-lazy val allSettings = buildSettings ++ baseSettings ++ publishSettings ++ scalariformSettings
+lazy val allSettings = buildSettings ++ baseSettings ++ publishSettings
 
 lazy val root = (project in file("."))
   .settings(
