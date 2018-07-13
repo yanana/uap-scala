@@ -17,7 +17,7 @@ lazy val compilerOptions = Seq(
 )
 
 val snakeyamlVersion = "1.21"
-val twitterUtilVersion = "18.5.0"
+val twitterUtilVersion = "18.7.0"
 val scalaCheckVersion = "1.14.0"
 val scalatestVersion = "3.0.5"
 
