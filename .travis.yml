@@ -1,6 +1,7 @@
 language: scala
 scala:
-   - 2.11.4
+   - 2.11.12
+   - 2.12.10
 # Handle git submodules yourself
 git:
    submodules: false
