@@ -17,13 +17,11 @@ lazy val compilerOptions = Seq(
 )
 
 val snakeyamlVersion = "1.21"
-val twitterUtilVersion = "18.7.0"
 val scalaCheckVersion = "1.14.0"
 val scalatestVersion = "3.0.5"
 
 lazy val coreDeps = Seq(
-  "org.yaml" % "snakeyaml" % snakeyamlVersion,
-  "com.twitter" %% "util-collection" % twitterUtilVersion
+  "org.yaml" % "snakeyaml" % snakeyamlVersion
 )
 
 lazy val testDeps = Seq(
