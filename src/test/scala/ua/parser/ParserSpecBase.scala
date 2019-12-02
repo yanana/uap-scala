@@ -6,11 +6,11 @@ import java.nio.charset.StandardCharsets
 import org.yaml.snakeyaml.Yaml
 import java.util.{ List => JList, Map => JMap }
 
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 
 import scala.collection.JavaConverters._
 
-trait ParserSpecBase extends FunSpec {
+trait ParserSpecBase extends AnyFunSpec {
 
   val parser: UserAgentStringParser
 
