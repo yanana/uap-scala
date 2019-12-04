@@ -6,11 +6,11 @@ import java.nio.charset.StandardCharsets
 import org.yaml.snakeyaml.Yaml
 import java.util.{ List => JList, Map => JMap }
 
-import org.scalatest.FunSpec
+import org.scalatest.funspec.AnyFunSpec
 
 import scala.collection.JavaConverters._
 
-trait ParserSpecBase extends FunSpec {
+trait ParserSpecBase extends AnyFunSpec {
 
   val parser: UserAgentStringParser
 
@@ -74,7 +74,7 @@ trait ParserSpecBase extends FunSpec {
 
     def readCasesConfig(resource: String) = {
       val stream = this.getClass.getResourceAsStream(resource)
-      val cases = yaml.load(stream).asInstanceOf[JMap[String, JList[JMap[String, String]]]]
+      val cases = yaml.load[JMap[String, JList[JMap[String, String]]]](stream)
         .asScala.toMap.mapValues(_.asScala.toList.map(_.asScala.toMap))
       cases.getOrElse("test_cases", List()).filterNot(_.contains("js_ua")).map { config =>
         config.filterNot { case (_, value) => value == null }
